@@ -1,25 +1,26 @@
-import ToasterContext from './context/ToasterContext'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
+import React, { ReactNode } from 'react';
+import AuthContext from './context/AuthContext';
+import ToasterContext from './context/ToasterContext';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Messenger',
-  description: 'Messenger clone',
+interface RootLayoutProps {
+	children: ReactNode;
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ToasterContext />
-        {children}
-      </body>
-    </html>
-  )
-}
+const RootLayout = ({ children }: RootLayoutProps) => {
+	return (
+		<html lang='en'>
+			<body className={inter.className}>
+				<AuthContext>
+					<ToasterContext />
+					{children}
+				</AuthContext>
+			</body>
+		</html>
+	);
+};
+
+export default RootLayout;
