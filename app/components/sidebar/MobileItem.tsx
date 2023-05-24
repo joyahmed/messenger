@@ -1,6 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
 import Link from 'next/link';
 
 interface MobileItemProps {
@@ -21,11 +20,10 @@ const MobileItem = ({
 	};
 
 	return (
-    <Link
-      onClick={handleClick}
+		<Link
+			onClick={handleClick}
 			href={href}
-			className={clsx(
-				`
+			className={`
         group
         flex
         justify-center
@@ -38,9 +36,8 @@ const MobileItem = ({
         text-gray-500
         hover:text-black
         hover:bg-gray-100
-      `,
-				active && 'bg-gray-100 text-black'
-			)}
+				${active && 'bg-gray-100 text-black'}
+      `}
 		>
 			<Icon className='h-6 w-6 shrink-0' />
 		</Link>

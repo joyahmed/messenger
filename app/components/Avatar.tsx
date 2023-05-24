@@ -27,9 +27,9 @@ const Avatar = ({ user }: AvatarProps) => {
 					alt='Avatar'
 					fill
 				/>
-      </div>
-      <span
-        className='
+			</div>
+			<span
+				className='
            absolute
            block
            rounded-full
@@ -43,10 +43,7 @@ const Avatar = ({ user }: AvatarProps) => {
            md:w-3
            md:h-3
         '
-      >
-
-
-      </span>
+			></span>
 		</div>
 	);
 };
