@@ -41,7 +41,7 @@ const UserList = ({ users }: UserListProps) => {
         {users.map(user => (
           <UserBox
             key={user.id}
-            {...{user}}
+            {...{data:user}}
           />
         ))}
 			</div>

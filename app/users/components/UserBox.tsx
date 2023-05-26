@@ -7,10 +7,10 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
 interface UserBoxProps {
-	user: User;
+	data: User;
 }
 
-const UserBox = ({ user }: UserBoxProps) => {
+const UserBox = ({ data }: UserBoxProps) => {
 	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -19,13 +19,14 @@ const UserBox = ({ user }: UserBoxProps) => {
 
 		axios
 			.post('/api/conversations', {
-				userId: user.id
+				userId: data.id
 			})
 			.then(data => {
+				console.log(data)
 				router.push(`/conversations/${data.data.id}`);
 			})
 			.finally(() => setIsLoading(false));
-	}, [user, router]);
+	}, [data, router]);
 	return (
 		<div
 			onClick={handleClick}
@@ -43,7 +44,7 @@ const UserBox = ({ user }: UserBoxProps) => {
       cursor-pointer
     '
 		>
-			<Avatar {...{ user }} />
+			<Avatar {...{ user: data }} />
 			<div className='flex-1 min-w-0'>
 				<div className='focus:outline-none'>
 					<div
@@ -61,7 +62,7 @@ const UserBox = ({ user }: UserBoxProps) => {
                 text-gray-900
               '
 						>
-							{user.name}
+							{data.name}
 						</p>
 					</div>
 				</div>

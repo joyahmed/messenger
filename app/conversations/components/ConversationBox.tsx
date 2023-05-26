@@ -2,8 +2,8 @@
 
 import Avatar from '@/app/components/Avatar';
 import AvatarGroup from '@/app/components/AvatarGroup';
-import useOtherUser from '@/app/hooks/useOtherUser';
-import { FullConversationType } from '@/app/types';
+import useOtherUser from '@/hooks/useOtherUser';
+import { FullConversationType } from '@/types';
 import { format } from 'date-fns';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -23,8 +23,8 @@ const ConversationBox = ({
 	const router = useRouter();
 
 	const handleClick = useCallback(() => {
-		router.push('/conversations/${conversation.id}');
-	}, [router]);
+		router.push(`/conversations/${conversation.id}`);
+	}, [conversation, router]);
 
 	const lastMessage = useMemo(() => {
 		const messages = conversation.messages || [];

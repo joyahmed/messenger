@@ -13,6 +13,7 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
 	return (
 		<html lang='en'>
+
 			<body className={inter.className}>
 				<AuthContext>
 					<ToasterContext />

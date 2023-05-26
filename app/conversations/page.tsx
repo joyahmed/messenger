@@ -1,7 +1,7 @@
 'use client';
 
+import useConversation from '../../hooks/useConversation';
 import EmptyState from '../components/EmptyState';
-import useConversation from '../hooks/useConversation';
 
 interface HomeProps {}
 

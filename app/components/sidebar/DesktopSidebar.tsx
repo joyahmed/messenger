@@ -1,6 +1,6 @@
 'use client';
 
-import useRoutes from '@/app/hooks/useRoutes';
+import useRoutes from '@/hooks/useRoutes';
 import { User } from '@prisma/client';
 import { useState } from 'react';
 import Avatar from '../Avatar';
@@ -66,19 +66,19 @@ const DesktopSidebar = ({ currentUser }: DesktopSidebarProps) => {
 			</nav>
 			<nav
 				className='
-							flex
-							flex-col
-							items-center
-							justify-between
-							mt-4
+					flex
+					flex-col
+					items-center
+					justify-between
+					mt-4
 				'
 			>
 				<div
 					onClick={() => setIsOpen(true)}
 					className='
-							cursor-pointer
-							hover:opacity-75
-							transition
+						cursor-pointer
+						hover:opacity-75
+						transition
 					'
 				>
 					<Avatar {...{ user: currentUser }} />

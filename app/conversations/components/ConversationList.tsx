@@ -1,8 +1,7 @@
 'use client';
 
-import useConversation from '@/app/hooks/useConversation';
-import { FullConversationType } from '@/app/types';
-import { useRouter } from 'next/navigation';
+import useConversation from '@/hooks/useConversation';
+import { FullConversationType } from '@/types';
 import { useState } from 'react';
 import { MdOutlineGroupAdd } from 'react-icons/md';
 import ConversationBox from './ConversationBox';
@@ -15,7 +14,7 @@ const ConversationList = ({
 	conversations
 }: ConversationListProps) => {
 	const [items, setItems] = useState(conversations);
-	const router = useRouter();
+
 
 	const { conversationId, isOpen } = useConversation();
 

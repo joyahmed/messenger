@@ -1,4 +1,4 @@
-import prisma from '@/app/libs/prismadb';
+import prisma from '@/libs/prismadb';
 import getCurrentUser from './getCurrentUser';
 
 const getConversations = async () => {
@@ -25,9 +25,9 @@ const getConversations = async () => {
 					}
 				}
 			}
-    });
+		});
 
-    return conversations;
+		return conversations;
 	} catch (error: any) {
 		return [];
 	}
