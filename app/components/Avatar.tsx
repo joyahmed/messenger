@@ -25,7 +25,8 @@ const Avatar = ({ user }: AvatarProps) => {
 				<Image
 					src={user?.image || '/images/placeholder.jpg'}
 					alt='Avatar'
-					fill
+          fill
+          sizes="(max-width: 600px) 100vw, 50vw"
 				/>
 			</div>
 			<span

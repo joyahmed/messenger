@@ -78,7 +78,7 @@ const MessageBox = ({ data, isLast }: MessageBoxProps) => {
 					</div>
 				)}
 			</div>
-		</div>
+		</div> 
 	);
 };
 
